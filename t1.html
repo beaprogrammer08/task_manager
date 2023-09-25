@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK MANAGER</title>
+    <link rel="shortcut icon" href="title.png" type="image/png">
+    <link rel="stylesheet" href="t1.css">
+   
+</head>
+
+<body>
+    <div class="body">
+        <section class="form">
+            <form onsubmit="handleAdd(event)">
+                <h1>Add Task</h1>
+                <div class="names">
+                    <label for="name">Title</label>
+                    <input id="name" class="input" type="text" style="border: 1px solid #999;">
+                </div>
+                
+                <!-- <label for="">Description</label>
+                <textarea id="title" class="input" cols="30" rows="5"></textarea> -->
+                <div class="catDate">
+                    <div>
+                        <label for="">Category</label>
+                        <select name="" id="category" style="border: 1px solid #999;">
+                            <option value="0">Select</option>
+                            <option value="Work">Work</option>
+                            <option value="Professional">Professional</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Study">Study</option>
+                            <option value="Health">Health</option>
+                        </select>
+                    </div>
+                    <div class="datess">
+                        <label for="">Date</label>
+                        <input id="date" type="date"  style="border: 1px solid #999;">
+                    </div>
+                </div>
+
+                <div id="btnDiv"  style="color:blue;">
+                    <button> Add Task</button>
+                </div>
+            </form>
+        </div>
+        <div id="overlay">
+            <div id="modal" class="modal">
+                <div class="modal_content">
+                    <h1>Update Todo</h1>
+                    <form onsubmit="handleSubmit2(event)">
+                        <input id="id" style="display: none;" type="text">
+                        <label for="">Title</label>
+                        <input id="name2" class="input" type="text">
+                        <!-- <label for="">Description</label>
+                        <textarea id="title2" class="input" cols="30" rows="5"></textarea> -->
+                        <select name="" id="category2">
+                            <option value="0">Select</option>
+                            <option value="Work">Work</option>
+                            <option value="Professional">Professional</option>
+                            <option value="Study">Study</option>
+                            <option value="Health">Health</option>
+                        </select>
+                        <label for="">Date</label>
+                        <input id="date2" type="date">
+                        <div>
+                            <button onclick="handleUpdate()" id="confirm"> Update </button>
+                            <button onclick="handleModal()" id="danger"> Cancel </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <section id="todos" style="display: none;">
+            <section class="table_container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 5%;"></th>
+                            <!-- <th style="width: 10%;">No</th> -->
+                            <!-- <th style="width: 0.1%;"></th> -->
+                            <!-- <th style="width: 20%;">Sr No.</th> -->
+                            <!-- <th style="width: 20%;">Description</th> -->
+                            <!-- <th style="width: 10%;">Title</th> -->
+                            <!-- <th style="width: 10%;">Category</th> -->
+                           
+                            <th style="width: 20%;"></th>
+                            <th style="width: 20%;">
+                                <div id="feature" style="display: flex; align-items: center; gap: 1rem;">
+                                    <!-- Add the search input -->
+                                    <input id="query" type="text" placeholder="Search by Title">
+                                    <button onclick="handleSearch()" class="btn btn-primary">Search</button>
+                                </div>
+                            </th>
+                            <th style="width: 10%;">
+                                <label for="date_cat">Sort by Date:</label>
+                                <select id="date_cat" onchange="sortDate()">
+                                    <option value="0">Select</option>
+                                    <option value="asc">Ascending</option>
+                                    <option value="desc">Descending</option>
+                                </select>
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        
+    </div>
+
+    <script src="t1.js" type="text/javascript"></script>
+
+</body>
+
+</html>
